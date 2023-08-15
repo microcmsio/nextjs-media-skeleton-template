@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Article } from '@/_libs/microcms';
 import PublishDate from '@/_components/PublishDate';
-import styles from './index.module.css';
 
 type Props = {
   article: Article;
@@ -16,7 +15,6 @@ export default function Card({ article }: Props) {
         alt=""
         width={article.thumbnail.width}
         height={article.thumbnail.height}
-        className={styles.image}
       />
       <dl>
         <dt>{article.title}</dt>

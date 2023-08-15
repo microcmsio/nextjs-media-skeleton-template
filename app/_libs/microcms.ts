@@ -22,12 +22,24 @@ export type Category = {
 export type Article = {
   title: string;
   description: string;
-  content: string;
+  content: (RichEditor | Ad)[];
   thumbnail: MicroCMSImage;
   tags?: Tag[];
   category?: Category;
 } & MicroCMSContentId &
   MicroCMSDate;
+
+// カスタムフィールド > リッチエディタの型定義
+export type RichEditor = {
+  fieldId: 'richEditor';
+  richEditor: string;
+};
+
+// カスタムフィールド > 広告の型定義
+export type Ad = {
+  fieldId: 'ad';
+  ad: boolean;
+};
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required');

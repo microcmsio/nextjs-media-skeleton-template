@@ -3,7 +3,6 @@ import Main from '@/_components/Main';
 import Sub from '@/_components/Sub';
 import { LIMIT } from '@/_constants';
 import { getArticleList } from '@/_libs/microcms';
-import Card from './_components/Card';
 import Cards from './_components/Cards';
 
 export default async function Page() {
