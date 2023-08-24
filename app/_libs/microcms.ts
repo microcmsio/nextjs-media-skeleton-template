@@ -41,6 +41,12 @@ export type Ad = {
   ad: boolean;
 };
 
+// ランキングの型定義
+export type Ranking = {
+  articles: string[];
+} & MicroCMSContentId &
+  MicroCMSDate;
+
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required');
 }
@@ -69,6 +75,15 @@ export const getArticleDetail = async (contentId: string, queries?: MicroCMSQuer
   const detailData = await client.getListDetail<Article>({
     endpoint: 'articles',
     contentId,
+    queries,
+  });
+  return detailData;
+};
+
+// ランキングを取得
+export const getRanking = async (queries?: MicroCMSQueries) => {
+  const detailData = await client.getObject<Article>({
+    endpoint: 'ranking',
     queries,
   });
   return detailData;

@@ -4,6 +4,7 @@ import { getArticleDetail } from '@/_libs/microcms';
 import Layout from '@/_components/Layout';
 import Main from '@/_components/Main';
 import Sub from '@/_components/Sub';
+import Ad from '@/_components/Ad';
 import PublishDate from '@/_components/PublishDate';
 import RichEditor from '@/_components/RichEditor';
 
@@ -60,7 +61,9 @@ export default async function Page({ params, searchParams }: Props) {
           return null;
         })}
       </Main>
-      <Sub>リスト</Sub>
+      <Sub>
+        <Ad />
+      </Sub>
     </Layout>
   );
 }
