@@ -12,13 +12,13 @@ const isProduction: boolean = process.env.NODE_ENV === 'production';
 export default function Ad() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    try {
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (error) {
-      console.error(error);
-    }
-  }, [pathname]);
+  // useEffect(() => {
+  //   try {
+  //     (adsbygoogle = window.adsbygoogle || []).push({});
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }, [pathname]);
 
   if (isProduction) {
     return (
