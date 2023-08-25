@@ -9,6 +9,7 @@ import Ranking from '@/_components/Ranking';
 import PublishDate from '@/_components/PublishDate';
 import RichEditor from '@/_components/RichEditor';
 import Pickup from '@/_components/Pickup';
+import SearchField from '@/_components/SearchField';
 
 type Props = {
   params: {
@@ -66,6 +67,7 @@ export default async function Page({ params, searchParams }: Props) {
       <Sub>
         <Ad />
         <Pickup />
+        <SearchField />
         <Ranking />
       </Sub>
     </Layout>

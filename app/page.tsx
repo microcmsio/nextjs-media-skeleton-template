@@ -4,8 +4,9 @@ import Sub from '@/_components/Sub';
 import Ad from '@/_components/Ad';
 import { LIMIT } from '@/_constants';
 import { getArticleList } from '@/_libs/microcms';
-import Cards from './_components/Cards';
-import Ranking from './_components/Ranking';
+import Cards from '@/_components/Cards';
+import Ranking from '@/_components/Ranking';
+import SearchField from '@/_components/SearchField';
 
 export default async function Page() {
   const data = await getArticleList({
@@ -19,8 +20,9 @@ export default async function Page() {
       </Main>
       <Sub>
         <Ad />
+        <SearchField />
         <Ranking />
-        <input type="search" placeholder="検索" />
+        <Ad />
       </Sub>
     </Layout>
   );
