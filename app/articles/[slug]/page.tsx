@@ -5,6 +5,7 @@ import Layout from '@/_components/Layout';
 import Main from '@/_components/Main';
 import Sub from '@/_components/Sub';
 import Ad from '@/_components/Ad';
+import Ranking from '@/_components/Ranking';
 import PublishDate from '@/_components/PublishDate';
 import RichEditor from '@/_components/RichEditor';
 
@@ -63,6 +64,7 @@ export default async function Page({ params, searchParams }: Props) {
       </Main>
       <Sub>
         <Ad />
+        <Ranking />
       </Sub>
     </Layout>
   );

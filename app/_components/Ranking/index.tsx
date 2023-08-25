@@ -1,18 +1,26 @@
-import { Article } from '@/_libs/microcms';
+import { getRanking } from '@/_libs/microcms';
+import { RANKING_LIMIT } from '@/_constants';
+import List from '@/_components/List';
 
-type Props = {
-  articles: Article[];
-};
-
-export default function Ranking({ articles }: Props) {
-  if (articles.length === 0) {
-    return <p>記事がありません。</p>;
-  }
+export default async function Ranking() {
+  const data = await getRanking({
+    limit: RANKING_LIMIT,
+  });
+  const articles = data.articles;
   return (
-    <ul>
-      {articles.map((article) => (
-        <li key={article.id}>{article.title}</li>
-      ))}
-    </ul>
+    <div>
+      <h2>週間ランキング</h2>
+      {articles.length === 0 ? (
+        <p>記事がありません。</p>
+      ) : (
+        <ul>
+          {articles.map((article) => (
+            <li key={article.id}>
+              <List article={article} />
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }

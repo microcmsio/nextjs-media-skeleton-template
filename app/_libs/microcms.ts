@@ -43,7 +43,7 @@ export type Ad = {
 
 // ランキングの型定義
 export type Ranking = {
-  articles: string[];
+  articles: Article[];
 } & MicroCMSContentId &
   MicroCMSDate;
 
@@ -82,7 +82,7 @@ export const getArticleDetail = async (contentId: string, queries?: MicroCMSQuer
 
 // ランキングを取得
 export const getRanking = async (queries?: MicroCMSQueries) => {
-  const detailData = await client.getObject<Article>({
+  const detailData = await client.getObject<Ranking>({
     endpoint: 'ranking',
     queries,
   });

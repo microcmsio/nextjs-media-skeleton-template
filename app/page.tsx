@@ -19,7 +19,7 @@ export default async function Page() {
       </Main>
       <Sub>
         <Ad />
-        <Ranking articles={data.contents} />
+        <Ranking />
       </Sub>
     </Layout>
   );
