@@ -8,6 +8,7 @@ import Ad from '@/_components/Ad';
 import Ranking from '@/_components/Ranking';
 import PublishDate from '@/_components/PublishDate';
 import RichEditor from '@/_components/RichEditor';
+import Pickup from '@/_components/Pickup';
 
 type Props = {
   params: {
@@ -64,6 +65,7 @@ export default async function Page({ params, searchParams }: Props) {
       </Main>
       <Sub>
         <Ad />
+        <Pickup />
         <Ranking />
       </Sub>
     </Layout>

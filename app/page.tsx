@@ -20,6 +20,7 @@ export default async function Page() {
       <Sub>
         <Ad />
         <Ranking />
+        <input type="search" placeholder="検索" />
       </Sub>
     </Layout>
   );

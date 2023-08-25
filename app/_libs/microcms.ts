@@ -47,6 +47,12 @@ export type Ranking = {
 } & MicroCMSContentId &
   MicroCMSDate;
 
+// ピックアップの型定義
+export type Pickup = {
+  articles: Article[];
+} & MicroCMSContentId &
+  MicroCMSDate;
+
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required');
 }
@@ -84,6 +90,15 @@ export const getArticleDetail = async (contentId: string, queries?: MicroCMSQuer
 export const getRanking = async (queries?: MicroCMSQueries) => {
   const detailData = await client.getObject<Ranking>({
     endpoint: 'ranking',
+    queries,
+  });
+  return detailData;
+};
+
+// ピックアップを取得
+export const getPickup = async (queries?: MicroCMSQueries) => {
+  const detailData = await client.getObject<Ranking>({
+    endpoint: 'pickup',
     queries,
   });
   return detailData;
