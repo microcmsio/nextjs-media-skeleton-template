@@ -1,0 +1,24 @@
+name: Set Ranking
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  set-ranking:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3.7.0
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install
+      - name: Set Ranking
+        env:
+          GOOGLE_SERVICE_ACCOUNT_KEY: ${{secrets.GOOGLE_SERVICE_ACCOUNT_KEY}}
+          GA_PROPERTY_ID: ${{secrets.GA_PROPERTY_ID}}
+          MICROCMS_API_KEY: ${{secrets.MICROCMS_API_KEY}}
+          MICROCMS_SERVICE_DOMAIN: ${{secrets.MICROCMS_SERVICE_DOMAIN}}
+        run: node ./.github/actions/ranking
