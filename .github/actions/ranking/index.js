@@ -54,8 +54,11 @@ export const getPopularArticles = async () => {
 };
 
 const popularArticles = (await getPopularArticles()) || [];
-console.log(JSON.stringify(popularArticles, null, 2));
-const ids = popularArticles.map((article) => article.path.slice(1));
+console.log('分析結果: ' + JSON.stringify(popularArticles, null, 2));
+
+// /articles/ は除くため10文字削る
+const ids = popularArticles.map((article) => article.path.slice(10));
+console.log('上位5件: ' + JSON.stringify(ids, null, 2));
 
 await client.update({
   endpoint: 'ranking',
