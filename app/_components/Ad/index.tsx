@@ -2,6 +2,7 @@
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 import Image from 'next/image';
+import styles from './index.module.css';
 
 declare global {
   var adsbygoogle: unknown[];
@@ -32,6 +33,6 @@ export default function Ad() {
       />
     );
   } else {
-    return <Image src="/ad.png" alt="ad" width="300" height="300" />;
+    return <div className={styles.ad}>Ad</div>;
   }
 }

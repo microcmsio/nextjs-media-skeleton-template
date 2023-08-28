@@ -1,0 +1,8 @@
+.ad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 240px;
+  background-color: #eee;
+  font-size: 40px;
+}

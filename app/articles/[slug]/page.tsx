@@ -61,6 +61,9 @@ export default async function Page({ params, searchParams }: Props) {
           if (item.fieldId === 'richEditor') {
             return <RichEditor key={i} content={item.richEditor} />;
           }
+          if (item.fieldId === 'ad' && item.ad) {
+            return <Ad key={i} />;
+          }
           return null;
         })}
       </Main>
