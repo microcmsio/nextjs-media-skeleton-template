@@ -8,5 +8,5 @@ type Props = {
 export default function PublishDate({ date }: Props) {
   const utcDate = new Date(date);
   const jstDate = utcToZonedTime(utcDate, 'Asia/Tokyo');
-  return <span>{format(jstDate, 'd MMMM, yyyy')}</span>;
+  return <span>{format(jstDate, 'yyyy/MM/dd')}</span>;
 }

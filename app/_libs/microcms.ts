@@ -103,3 +103,13 @@ export const getPickup = async (queries?: MicroCMSQueries) => {
   });
   return detailData;
 };
+
+// カテゴリーを取得
+export const getCategoryDetail = async (contentId: string, queries?: MicroCMSQueries) => {
+  const detailData = await client.getListDetail<Category>({
+    endpoint: 'categories',
+    contentId,
+    queries,
+  });
+  return detailData;
+};

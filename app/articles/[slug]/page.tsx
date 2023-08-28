@@ -10,6 +10,7 @@ import PublishDate from '@/_components/PublishDate';
 import RichEditor from '@/_components/RichEditor';
 import Pickup from '@/_components/Pickup';
 import SearchField from '@/_components/SearchField';
+import Category from '@/_components/Category';
 
 type Props = {
   params: {
@@ -48,6 +49,7 @@ export default async function Page({ params, searchParams }: Props) {
       <Main>
         <h1>{data.title}</h1>
         <p>{data.description}</p>
+        <div>{data.category && <Category category={data.category} />}</div>
         <div>
           <PublishDate date={data.publishedAt || data.createdAt} />
         </div>
