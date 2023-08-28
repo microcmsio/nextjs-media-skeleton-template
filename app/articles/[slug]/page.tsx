@@ -11,6 +11,7 @@ import RichEditor from '@/_components/RichEditor';
 import Pickup from '@/_components/Pickup';
 import SearchField from '@/_components/SearchField';
 import Category from '@/_components/Category';
+import Tags from '@/_components/Tags';
 
 type Props = {
   params: {
@@ -48,8 +49,8 @@ export default async function Page({ params, searchParams }: Props) {
     <Layout>
       <Main>
         <h1>{data.title}</h1>
-        <p>{data.description}</p>
         <div>{data.category && <Category category={data.category} />}</div>
+        <div>{data.tags && <Tags tags={data.tags} />}</div>
         <div>
           <PublishDate date={data.publishedAt || data.createdAt} />
         </div>

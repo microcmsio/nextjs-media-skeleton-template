@@ -113,3 +113,13 @@ export const getCategoryDetail = async (contentId: string, queries?: MicroCMSQue
   });
   return detailData;
 };
+
+// タグを取得
+export const getTagDetail = async (contentId: string, queries?: MicroCMSQueries) => {
+  const detailData = await client.getListDetail<Category>({
+    endpoint: 'tags',
+    contentId,
+    queries,
+  });
+  return detailData;
+};
