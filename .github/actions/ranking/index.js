@@ -54,6 +54,7 @@ export const getPopularArticles = async () => {
 };
 
 const popularArticles = (await getPopularArticles()) || [];
+console.log(JSON.stringify(popularArticles, null, 2));
 const ids = popularArticles.map((article) => article.path.slice(1));
 
 await client.update({
