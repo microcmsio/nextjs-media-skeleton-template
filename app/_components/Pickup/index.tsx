@@ -2,9 +2,14 @@ import { getPickup } from '@/_libs/microcms';
 import { RANKING_LIMIT } from '@/_constants';
 import List from '@/_components/List';
 
-export default async function Pickup() {
+type Props = {
+  draftKey?: string;
+};
+
+export default async function Pickup({ draftKey }: Props) {
   const data = await getPickup({
     limit: RANKING_LIMIT,
+    draftKey,
   });
   const articles = data.articles;
   return (

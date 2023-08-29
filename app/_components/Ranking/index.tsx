@@ -2,9 +2,14 @@ import { getRanking } from '@/_libs/microcms';
 import { RANKING_LIMIT } from '@/_constants';
 import List from '@/_components/List';
 
-export default async function Ranking() {
+type Props = {
+  draftKey?: string;
+};
+
+export default async function Ranking({ draftKey }: Props) {
   const data = await getRanking({
     limit: RANKING_LIMIT,
+    draftKey,
   });
   const articles = data.articles;
   return (

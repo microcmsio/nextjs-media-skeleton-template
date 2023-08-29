@@ -18,7 +18,7 @@ type Props = {
     slug: string;
   };
   searchParams: {
-    dk?: string;
+    draftKey?: string;
   };
 };
 
@@ -26,7 +26,7 @@ export const revalidate = 60;
 
 export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const data = await getArticleDetail(params.slug, {
-    draftKey: searchParams.dk,
+    draftKey: searchParams.draftKey,
   });
 
   return {
@@ -42,7 +42,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 
 export default async function Page({ params, searchParams }: Props) {
   const data = await getArticleDetail(params.slug, {
-    draftKey: searchParams.dk,
+    draftKey: searchParams.draftKey,
   });
 
   return (

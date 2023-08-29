@@ -8,19 +8,20 @@ import Cards from '@/_components/Cards';
 import Ranking from '@/_components/Ranking';
 import SearchField from '@/_components/SearchField';
 import { ReadMore } from '@/_components/ReadMore';
+import Pickup from '@/_components/Pickup';
 
 export const revalidate = 60;
 
 type Props = {
   searchParams: {
-    dk?: string;
+    rankingDraftKey?: string;
+    pickupDraftKey?: string;
   };
 };
 
 export default async function Page({ searchParams }: Props) {
   const data = await getArticleList({
     limit: LIMIT,
-    draftKey: searchParams.dk,
   });
   return (
     <Layout>
@@ -31,8 +32,9 @@ export default async function Page({ searchParams }: Props) {
       </Main>
       <Sub>
         <Ad />
+        <Pickup draftKey={searchParams.pickupDraftKey} />
         <SearchField />
-        <Ranking />
+        <Ranking draftKey={searchParams.rankingDraftKey} />
         <Ad />
       </Sub>
     </Layout>
