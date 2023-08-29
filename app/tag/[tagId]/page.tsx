@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Layout from '@/_components/Layout';
 import Main from '@/_components/Main';
 import Sub from '@/_components/Sub';
@@ -17,6 +18,13 @@ type Props = {
 };
 
 export const revalidate = 60;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const tag = await getTagDetail(params.tagId);
+  return {
+    title: tag.name,
+  };
+}
 
 export default async function Page({ params }: Props) {
   const filters = `tags[contains]${params.tagId}`;

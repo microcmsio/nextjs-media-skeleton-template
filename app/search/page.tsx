@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Layout from '@/_components/Layout';
 import Main from '@/_components/Main';
 import Sub from '@/_components/Sub';
@@ -17,6 +18,12 @@ type Props = {
 };
 
 export const revalidate = 60;
+
+export function generateMetadata({ searchParams }: Props): Metadata {
+  return {
+    title: `「${searchParams.q}」の検索結果`,
+  };
+}
 
 export default async function Page({ searchParams }: Props) {
   const q = searchParams.q;

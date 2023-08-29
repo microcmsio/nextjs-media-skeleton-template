@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Layout from '@/_components/Layout';
 import Main from '@/_components/Main';
 import Sub from '@/_components/Sub';
@@ -17,6 +18,13 @@ type Props = {
 };
 
 export const revalidate = 60;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const category = await getCategoryDetail(params.categoryId);
+  return {
+    title: category.name,
+  };
+}
 
 export default async function Page({ params }: Props) {
   const filters = `category[equals]${params.categoryId}`;
