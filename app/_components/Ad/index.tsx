@@ -11,7 +11,7 @@ declare global {
 const isProduction: boolean = process.env.NODE_ENV === 'production';
 
 export default function Ad() {
-  const pathname = usePathname();
+  // const pathname = usePathname();
 
   // useEffect(() => {
   //   try {
@@ -21,18 +21,17 @@ export default function Ad() {
   //   }
   // }, [pathname]);
 
-  if (isProduction) {
-    return (
-      <ins
-        className="adsbygoogle"
-        style={{ display: 'block' }}
-        data-ad-client="ca-pub-0000000000000000"
-        data-ad-slot="0000000000"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      />
-    );
-  } else {
-    return <div className={styles.ad}>Ad</div>;
-  }
+  // if (isProduction) {
+  //   return (
+  //     <ins
+  //       className="adsbygoogle"
+  //       style={{ display: 'block' }}
+  //       data-ad-client="ca-pub-0000000000000000"
+  //       data-ad-slot="0000000000"
+  //       data-ad-format="auto"
+  //       data-full-width-responsive="true"
+  //     />
+  //   );
+  // }
+  return <div className={styles.ad}>Ad</div>;
 }
