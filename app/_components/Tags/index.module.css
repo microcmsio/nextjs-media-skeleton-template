@@ -1,4 +1,4 @@
 .tags {
-  display: flex;
-  gap: 16px;
+  display: inline-flex;
+  gap: 8px;
 }

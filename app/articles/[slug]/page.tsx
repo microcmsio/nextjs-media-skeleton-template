@@ -50,8 +50,8 @@ export default async function Page({ params, searchParams }: Props) {
     <Layout>
       <Main>
         <h1>{data.title}</h1>
-        <div>{data.category && <Category category={data.category} />}</div>
-        <div>{data.tags && <Tags tags={data.tags} />}</div>
+        <div>カテゴリー：{data.category && <Category category={data.category} />}</div>
+        <div>タグ：{data.tags && <Tags tags={data.tags} />}</div>
         <div>
           <PublishDate date={data.publishedAt || data.createdAt} />
         </div>
