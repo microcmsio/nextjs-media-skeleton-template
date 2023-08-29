@@ -9,6 +9,8 @@ import Ranking from '@/_components/Ranking';
 import SearchField from '@/_components/SearchField';
 import { ReadMore } from '@/_components/ReadMore';
 
+export const revalidate = 60;
+
 export default async function Page() {
   const data = await getArticleList({
     limit: LIMIT,
