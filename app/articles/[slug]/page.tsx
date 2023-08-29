@@ -12,6 +12,7 @@ import Pickup from '@/_components/Pickup';
 import SearchField from '@/_components/SearchField';
 import Category from '@/_components/Category';
 import Tags from '@/_components/Tags';
+import Cards from '@/_components/Cards';
 
 type Props = {
   params: {
@@ -69,6 +70,12 @@ export default async function Page({ params, searchParams }: Props) {
           }
           return null;
         })}
+        {data.relatedArticles.length > 0 && (
+          <>
+            <h2>関連記事</h2>
+            <Cards articles={data.relatedArticles} />
+          </>
+        )}
       </Main>
       <Sub>
         <Ad />

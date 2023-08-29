@@ -24,8 +24,9 @@ export type Article = {
   description: string;
   content: (RichEditor | Ad)[];
   thumbnail: MicroCMSImage;
-  tags?: Tag[];
-  category?: Category;
+  tags: Tag[];
+  category: Category | null;
+  relatedArticles: Article[];
 } & MicroCMSContentId &
   MicroCMSDate;
 
