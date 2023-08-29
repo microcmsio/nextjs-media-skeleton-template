@@ -10,7 +10,7 @@ export default async function Pickup({ draftKey }: Props) {
   const data = await getPickup({
     limit: RANKING_LIMIT,
     draftKey,
-  });
+  }).catch(() => ({ articles: [] }));
   const articles = data.articles;
   return (
     <div>

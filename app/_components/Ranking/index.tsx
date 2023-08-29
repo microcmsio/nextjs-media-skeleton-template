@@ -10,7 +10,7 @@ export default async function Ranking({ draftKey }: Props) {
   const data = await getRanking({
     limit: RANKING_LIMIT,
     draftKey,
-  });
+  }).catch(() => ({ articles: [] }));
   const articles = data.articles;
   return (
     <div>
