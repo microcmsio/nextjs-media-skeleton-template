@@ -18,7 +18,7 @@ type Props = {
     slug: string;
   };
   searchParams: {
-    dk: string;
+    dk?: string;
   };
 };
 

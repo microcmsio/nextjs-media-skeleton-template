@@ -11,9 +11,16 @@ import { ReadMore } from '@/_components/ReadMore';
 
 export const revalidate = 60;
 
-export default async function Page() {
+type Props = {
+  searchParams: {
+    dk?: string;
+  };
+};
+
+export default async function Page({ searchParams }: Props) {
   const data = await getArticleList({
     limit: LIMIT,
+    draftKey: searchParams.dk,
   });
   return (
     <Layout>
