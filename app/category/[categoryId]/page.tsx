@@ -19,7 +19,7 @@ type Props = {
 export const revalidate = 60;
 
 export default async function Page({ params }: Props) {
-  const filters = `tags[contains]${params.categoryId}`;
+  const filters = `category[equals]${params.categoryId}`;
   const data = await getArticleList({
     limit: LIMIT,
     filters,
@@ -30,7 +30,7 @@ export default async function Page({ params }: Props) {
       <Main>
         <h1>{category.name}</h1>
         <Cards articles={data.contents} />
-        <ReadMore filters={filters} />
+        <ReadMore filters={filters} totalCount={data.totalCount} />
       </Main>
       <Sub>
         <Ad />

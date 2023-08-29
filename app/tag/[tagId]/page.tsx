@@ -30,7 +30,7 @@ export default async function Page({ params }: Props) {
       <Main>
         <h1>{tag.name}</h1>
         <Cards articles={data.contents} />
-        <ReadMore filters={filters} />
+        <ReadMore filters={filters} totalCount={data.totalCount} />
       </Main>
       <Sub>
         <Ad />

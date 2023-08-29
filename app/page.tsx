@@ -20,7 +20,7 @@ export default async function Page() {
       <Main>
         <h1>新着情報</h1>
         <Cards articles={data.contents} />
-        <ReadMore />
+        <ReadMore totalCount={data.totalCount} />
       </Main>
       <Sub>
         <Ad />

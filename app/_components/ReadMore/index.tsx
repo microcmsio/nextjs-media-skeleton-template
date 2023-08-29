@@ -7,9 +7,10 @@ import Cards from '@/_components/Cards';
 
 type Props = {
   filters?: string;
+  totalCount: number;
 };
 
-export const ReadMore: FC<Props> = ({ filters }) => {
+export const ReadMore: FC<Props> = ({ filters, totalCount }) => {
   const [contents, setContents] = useState<Article[]>([]);
   const [offset, setOffset] = useState<number>(LIMIT);
   const getNextContents = useCallback(async () => {
@@ -25,7 +26,7 @@ export const ReadMore: FC<Props> = ({ filters }) => {
   return (
     <div>
       <Cards articles={contents} />
-      <button onClick={getNextContents}>もっと読む</button>
+      {totalCount > offset && <button onClick={getNextContents}>もっと読む</button>}
     </div>
   );
 };
