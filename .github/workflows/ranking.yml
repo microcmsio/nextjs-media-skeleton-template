@@ -19,6 +19,6 @@ jobs:
         env:
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{secrets.GOOGLE_SERVICE_ACCOUNT_KEY}}
           GA_PROPERTY_ID: ${{secrets.GA_PROPERTY_ID}}
-          MICROCMS_API_KEY: ${{secrets.MICROCMS_API_KEY}}
+          MICROCMS_PATCH_API_KEY: ${{secrets.MICROCMS_PATCH_API_KEY}}
           MICROCMS_SERVICE_DOMAIN: ${{secrets.MICROCMS_SERVICE_DOMAIN}}
         run: node ./.github/actions/ranking

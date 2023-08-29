@@ -7,6 +7,7 @@ import { getArticleList } from '@/_libs/microcms';
 import Cards from '@/_components/Cards';
 import Ranking from '@/_components/Ranking';
 import SearchField from '@/_components/SearchField';
+import { ReadMore } from '@/_components/ReadMore';
 
 export default async function Page() {
   const data = await getArticleList({
@@ -17,6 +18,7 @@ export default async function Page() {
       <Main>
         <h1>新着情報</h1>
         <Cards articles={data.contents} />
+        <ReadMore />
       </Main>
       <Sub>
         <Ad />

@@ -2,7 +2,7 @@ import { BetaAnalyticsDataClient } from '@google-analytics/data';
 import { createClient } from 'microcms-js-sdk';
 const client = createClient({
   serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
-  apiKey: process.env.MICROCMS_API_KEY,
+  apiKey: process.env.MICROCMS_PATCH_API_KEY,
 });
 
 const serviceAccountKey = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY || '');
@@ -32,7 +32,7 @@ export const getPopularArticles = async () => {
         name: 'screenPageViews',
       },
     ],
-    // トップページ（/）を除く
+    // articles/配下のみを計測する
     dimensionFilter: {
       filter: {
         fieldName: 'pagePath',
