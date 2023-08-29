@@ -4,10 +4,11 @@ import Sub from '@/_components/Sub';
 import Ad from '@/_components/Ad';
 import { LIMIT } from '@/_constants';
 import { getArticleList } from '@/_libs/microcms';
-import List from '@/_components/List';
 import Pickup from '@/_components/Pickup';
 import Ranking from '@/_components/Ranking';
 import SearchField from '@/_components/SearchField';
+import Cards from '@/_components/Cards';
+import { ReadMore } from '@/_components/ReadMore';
 
 type Props = {
   searchParams: {
@@ -18,9 +19,10 @@ type Props = {
 export const revalidate = 60;
 
 export default async function Page({ searchParams }: Props) {
+  const q = searchParams.q;
   const data = await getArticleList({
     limit: LIMIT,
-    q: searchParams.q,
+    q,
   });
   return (
     <Layout>
@@ -28,13 +30,8 @@ export default async function Page({ searchParams }: Props) {
         <SearchField />
         <h1>「{searchParams.q}」の検索結果</h1>
         <p>{data.totalCount}件が見つかりました</p>
-        <ul>
-          {data.contents.map((article) => (
-            <li key={article.id}>
-              <List article={article} />
-            </li>
-          ))}
-        </ul>
+        <Cards articles={data.contents} />
+        <ReadMore totalCount={data.totalCount} q={q} />
       </Main>
       <Sub>
         <Ad />
