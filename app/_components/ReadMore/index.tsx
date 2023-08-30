@@ -25,6 +25,10 @@ export const ReadMore: FC<Props> = ({ filters, q, totalCount }) => {
     setOffset((prev) => prev + LIMIT);
   }, [offset, filters, q]);
 
+  if (totalCount <= LIMIT) {
+    return null;
+  }
+
   return (
     <div>
       <Cards articles={contents} />
