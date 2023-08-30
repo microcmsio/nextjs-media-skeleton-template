@@ -17,6 +17,16 @@ Node.js 18 以上
 
 # 動作させるのに必要な作業
 
+複数サービスと連携して動作させる必要があるため、各種登録作業が多いですがお付き合いください。
+
+## microCMS の設定
+
+## Google Analytics の設定
+
+## Google Tag Manager の設定
+
+## Google Cloud Platform の設定
+
 ## 環境変数の設定
 
 ルート直下に`.env.local`ファイルを作成し、下記の情報を入力してください。

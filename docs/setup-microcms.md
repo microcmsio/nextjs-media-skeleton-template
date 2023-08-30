@@ -1,0 +1,1 @@
+# microCMS の設定
