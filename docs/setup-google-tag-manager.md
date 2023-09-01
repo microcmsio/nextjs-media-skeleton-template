@@ -18,7 +18,7 @@ Google Analytics のタグを追加します。
 
 「Google アナリティクス: GA4 設定」というタグを選択し、追加します。
 設定項目は次のとおりです。（開かれていない部分は特に変更なしです）
-測定 ID 部分には Google Analytics から取得できる「G-**\*\*\*\***」という ID を入力してください。
+測定 ID 部分には Google Analytics から取得できる「G-xxxxxxxxxxxx」という ID を入力してください。
 
 ![gtm-setting-01](/assets/gtm-setting-01.png)
 
