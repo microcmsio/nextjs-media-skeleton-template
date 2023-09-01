@@ -27,3 +27,5 @@ Google Analytics のタグを追加します。
 タグの追加が完了したら、画面右上にある「公開」ボタンからタグを公開しましょう。
 
 ![gtm-setting-02](/assets/gtm-setting-02.png)
+
+サイトを Vercel 等のサーバーにホスティングした後、実際にサイトにアクセスしてみて、Google Analytics での計測が正常に動作していれば成功となります。
