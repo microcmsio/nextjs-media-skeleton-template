@@ -21,11 +21,19 @@ Node.js 18 以上
 
 ## microCMS の設定
 
+[microCMS の設定](/docs/setup-microcms.md)をご覧下さい。
+
 ## Google Analytics の設定
+
+[Google Analytics の設定](/docs/setup-google-analytics.md)をご覧下さい。
 
 ## Google Tag Manager の設定
 
+[Google Tag Manager の設定](/docs/setup-google-tag-manager.md)をご覧下さい。
+
 ## Google Cloud Platform の設定
+
+[Google Cloud Platform の設定](/docs/setup-google-cloud-platform.md)をご覧下さい。
 
 ## 環境変数の設定
 
