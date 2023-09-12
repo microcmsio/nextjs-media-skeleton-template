@@ -21,19 +21,19 @@ Node.js 18 以上
 
 ## microCMS の設定
 
-[microCMS の設定](/docs/setup-microcms.md)をご覧下さい。
+[microCMS の設定](https://github.com/microcmsio/nextjs-media-skeleton-template/blob/main/docs/setup-microcms.md)をご覧下さい。
 
 ## Google Analytics の設定
 
-[Google Analytics の設定](/docs/setup-google-analytics.md)をご覧下さい。
+[Google Analytics の設定](https://github.com/microcmsio/nextjs-media-skeleton-template/blob/main/docs/setup-google-analytics.md)をご覧下さい。
 
 ## Google Tag Manager の設定
 
-[Google Tag Manager の設定](/docs/setup-google-tag-manager.md)をご覧下さい。
+[Google Tag Manager の設定](https://github.com/microcmsio/nextjs-media-skeleton-template/blob/main/docs/setup-google-tag-manager.md)をご覧下さい。
 
 ## Google Cloud Platform の設定
 
-[Google Cloud Platform の設定](/docs/setup-google-cloud-platform.md)をご覧下さい。
+[Google Cloud Platform の設定](https://github.com/microcmsio/nextjs-media-skeleton-template/blob/main/docs/setup-google-cloud-platform.md)をご覧下さい。
 
 ## 環境変数の設定
 
@@ -52,7 +52,7 @@ microCMS 管理画面の「サービス設定 > API キー」から確認する�
 メソッドは GET に限定している前提です。
 
 `NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN`  
-microCMS 管理画面の URL（https://xxxxxxxx.microcms.io）の xxxxxxxx の部分です。
+microCMS 管理画面の URL（ https://xxxxxxxx.microcms.io ）の xxxxxxxx の部分です。
 
 `BASE_URL`
 デプロイ先の URL です。プロトコルから記載してください。
