@@ -118,3 +118,11 @@ Google Analytics や Google Cloud Platform などの各設定が完了しない�
 schedule:
   - cron: '0 0 * * *'
 ```
+
+## Google Adsense について
+
+本テンプレートでは Google Adsense にも対応しています。
+（広告掲載には審査が必要です。デフォルトでは該当コードをコメントアウトしてあります。）
+
+オンにしたい場合は`app/layout.tsx`内のスクリプト読み込み部分と、`app/_components/Ad/index.tsx`内のコメントアウトを解除してください。
+その際には、`data-ad-client`などの値は Adsense から取得してきた値に適宜変更してください。
