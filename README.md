@@ -77,7 +77,11 @@ Google Tag Manager の ID
 Google Analytis のプロパティ ID
 
 `GOOGLE_SERVICE_ACCOUNT_KEY`  
-Google Cloud Platform のサービスアカウントキー
+Google Cloud Platform のサービスアカウントキー（長い JSON をそのまま登録）
+
+```
+{"type": "service_account", /* 省略... */,"universe_domain": "googleapis.com"}
+```
 
 `MICROCMS_PATCH_API_KEY`
 microCMS 管理画面の「サービス設定 > API キー」から確認することができます。
