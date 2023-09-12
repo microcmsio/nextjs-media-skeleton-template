@@ -102,3 +102,15 @@ npm run dev
 
 3. 開発環境へのアクセス  
    [http://localhost:3000](http://localhost:3000)にアクセス
+
+## GitHub Actions の cron について
+
+本テンプレートでは記事ランキングの自動更新のために GitHub Actions の cron を利用しています。
+Google Analytics や Google Cloud Platform などの各設定が完了しないと正常に動作しないため、cron 処理が行われるたびにエラーが発生してしまう可能性があります。
+
+エラーが気になる場合は、`.github/workflows/ranking.yml`の下記コードをコメントアウトしてください。
+
+```yml
+schedule:
+  - cron: '0 0 * * *'
+```
