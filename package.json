@@ -18,11 +18,11 @@
     "printWidth": 100
   },
   "engines": {
-    "node": ">=18.x"
+    "node": ">=22.x"
   },
   "dependencies": {
     "@google-analytics/data": "^4.0.0",
-    "@types/node": "20.5.0",
+    "@types/node": "^22.16.5",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
     "@types/react-gtm-module": "^2.0.1",
