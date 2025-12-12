@@ -32,7 +32,7 @@
     "eslint-config-next": "13.4.13",
     "eslint-config-prettier": "^9.0.0",
     "microcms-js-sdk": "^2.5.0",
-    "next": "13.4.13",
+    "next": "14.2.35",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-gtm-module": "^2.0.11",
