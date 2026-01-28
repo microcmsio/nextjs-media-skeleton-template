@@ -12,21 +12,22 @@ import Cards from '@/_components/Cards';
 import { ReadMore } from '@/_components/ReadMore';
 
 type Props = {
-  searchParams: {
+  searchParams: Promise<{
     q?: string;
-  };
+  }>;
 };
 
 export const revalidate = 60;
 
-export function generateMetadata({ searchParams }: Props): Metadata {
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const { q } = await searchParams;
   return {
-    title: `「${searchParams.q}」の検索結果`,
+    title: `「${q}」の検索結果`,
   };
 }
 
 export default async function Page({ searchParams }: Props) {
-  const q = searchParams.q;
+  const { q } = await searchParams;
   const data = await getArticleList({
     limit: LIMIT,
     q,
@@ -35,7 +36,7 @@ export default async function Page({ searchParams }: Props) {
     <Layout>
       <Main>
         <SearchField />
-        <h1>「{searchParams.q}」の検索結果</h1>
+        <h1>「{q}」の検索結果</h1>
         <p>{data.totalCount}件が見つかりました</p>
         <Cards articles={data.contents} />
         <ReadMore totalCount={data.totalCount} q={q} />

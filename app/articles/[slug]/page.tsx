@@ -15,19 +15,21 @@ import Tags from '@/_components/Tags';
 import Cards from '@/_components/Cards';
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     draftKey?: string;
-  };
+  }>;
 };
 
 export const revalidate = 60;
 
 export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
-  const data = await getArticleDetail(params.slug, {
-    draftKey: searchParams.draftKey,
+  const { slug } = await params;
+  const { draftKey } = await searchParams;
+  const data = await getArticleDetail(slug, {
+    draftKey,
   });
 
   return {
@@ -42,8 +44,10 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 }
 
 export default async function Page({ params, searchParams }: Props) {
-  const data = await getArticleDetail(params.slug, {
-    draftKey: searchParams.draftKey,
+  const { slug } = await params;
+  const { draftKey } = await searchParams;
+  const data = await getArticleDetail(slug, {
+    draftKey,
   });
 
   return (

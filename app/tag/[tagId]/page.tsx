@@ -12,27 +12,29 @@ import { notFound } from 'next/navigation';
 import { ReadMore } from '@/_components/ReadMore';
 
 type Props = {
-  params: {
+  params: Promise<{
     tagId: string;
-  };
+  }>;
 };
 
 export const revalidate = 60;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const tag = await getTagDetail(params.tagId);
+  const { tagId } = await params;
+  const tag = await getTagDetail(tagId);
   return {
     title: tag.name,
   };
 }
 
 export default async function Page({ params }: Props) {
-  const filters = `tags[contains]${params.tagId}`;
+  const { tagId } = await params;
+  const filters = `tags[contains]${tagId}`;
   const data = await getArticleList({
     limit: LIMIT,
     filters,
   });
-  const tag = await getTagDetail(params.tagId).catch(() => notFound());
+  const tag = await getTagDetail(tagId).catch(() => notFound());
   return (
     <Layout>
       <Main>

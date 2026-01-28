@@ -12,27 +12,29 @@ import { notFound } from 'next/navigation';
 import { ReadMore } from '@/_components/ReadMore';
 
 type Props = {
-  params: {
+  params: Promise<{
     categoryId: string;
-  };
+  }>;
 };
 
 export const revalidate = 60;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const category = await getCategoryDetail(params.categoryId);
+  const { categoryId } = await params;
+  const category = await getCategoryDetail(categoryId);
   return {
     title: category.name,
   };
 }
 
 export default async function Page({ params }: Props) {
-  const filters = `category[equals]${params.categoryId}`;
+  const { categoryId } = await params;
+  const filters = `category[equals]${categoryId}`;
   const data = await getArticleList({
     limit: LIMIT,
     filters,
   });
-  const category = await getCategoryDetail(params.categoryId).catch(() => notFound());
+  const category = await getCategoryDetail(categoryId).catch(() => notFound());
   return (
     <Layout>
       <Main>
