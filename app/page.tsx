@@ -13,13 +13,14 @@ import Pickup from '@/_components/Pickup';
 export const revalidate = 60;
 
 type Props = {
-  searchParams: {
+  searchParams: Promise<{
     rankingDraftKey?: string;
     pickupDraftKey?: string;
-  };
+  }>;
 };
 
 export default async function Page({ searchParams }: Props) {
+  const { rankingDraftKey, pickupDraftKey } = await searchParams;
   const data = await getArticleList({
     limit: LIMIT,
   });
@@ -32,9 +33,9 @@ export default async function Page({ searchParams }: Props) {
       </Main>
       <Sub>
         <Ad />
-        <Pickup draftKey={searchParams.pickupDraftKey} />
+        <Pickup draftKey={pickupDraftKey} />
         <SearchField />
-        <Ranking draftKey={searchParams.rankingDraftKey} />
+        <Ranking draftKey={rankingDraftKey} />
         <Ad />
       </Sub>
     </Layout>
