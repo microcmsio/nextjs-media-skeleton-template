@@ -12,9 +12,9 @@ export default function Cards({ articles }: Props) {
   }
   return (
     <ul className={styles.cards}>
-      {articles.map((article) => (
+      {articles.map((article, i) => (
         <li key={article.id}>
-          <Card article={article} />
+          <Card article={article} priority={i === 0} />
         </li>
       ))}
     </ul>
