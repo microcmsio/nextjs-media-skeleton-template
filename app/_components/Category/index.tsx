@@ -1,4 +1,4 @@
-import { Category } from '@/_libs/microcms';
+import type { Category } from '@/_libs/microcms';
 import Link from 'next/link';
 
 type Props = {

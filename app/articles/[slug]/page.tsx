@@ -64,6 +64,7 @@ export default async function Page({ params, searchParams }: Props) {
           alt=""
           width={data.thumbnail.width}
           height={data.thumbnail.height}
+          loading="eager"
         />
         {data.content.map((item, i) => {
           if (item.fieldId === 'richEditor') {
