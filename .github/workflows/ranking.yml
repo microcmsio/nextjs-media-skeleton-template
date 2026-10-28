@@ -1,8 +1,9 @@
 name: Set Ranking
 
 on:
-  schedule:
-    - cron: '0 0 * * *'
+  # 定期実行する場合は以下のコメントアウトを解除してください。
+  # schedule:
+  #   - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
@@ -17,8 +18,8 @@ jobs:
         run: npm install
       - name: Set Ranking
         env:
-          GOOGLE_SERVICE_ACCOUNT_KEY: ${{secrets.GOOGLE_SERVICE_ACCOUNT_KEY}}
-          GA_PROPERTY_ID: ${{secrets.GA_PROPERTY_ID}}
-          MICROCMS_PATCH_API_KEY: ${{secrets.MICROCMS_PATCH_API_KEY}}
-          MICROCMS_SERVICE_DOMAIN: ${{secrets.MICROCMS_SERVICE_DOMAIN}}
+          GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+          GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
+          MICROCMS_PATCH_API_KEY: ${{ secrets.MICROCMS_PATCH_API_KEY }}
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
         run: node ./.github/actions/ranking
