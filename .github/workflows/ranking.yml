@@ -14,8 +14,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - name: Setup npm 12
+        run: npm install -g npm@12.2.1 --engine-strict=false
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Set Ranking
         env:
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
