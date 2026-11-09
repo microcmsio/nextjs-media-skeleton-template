@@ -18,7 +18,7 @@
     "printWidth": 100
   },
   "engines": {
-    "node": ">=24.x"
+    "node": "26.x"
   },
   "dependencies": {
     "@google-analytics/data": "^4.0.0",
@@ -37,5 +37,9 @@
     "react-dom": "19.2.8",
     "react-gtm-module": "^2.0.11",
     "typescript": "6.0.3"
+  },
+  "allowScripts": {
+    "protobufjs@7.6.6": false,
+    "unrs-resolver@1.12.2": true
   }
 }
